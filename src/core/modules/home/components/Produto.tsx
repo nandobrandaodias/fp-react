@@ -2,7 +2,7 @@ export default function Produto(){
     let itemLogo = 'https://www.dimprice.co.uk/image/cache/catalog/products_2021/apple-watch-series-7-41mm-starlight-01-800x800.png'
 
     return(
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full lg:w-1/5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="/">
         <img className="p-8 w-auto mx-auto max-h-80 rounded-t-lg" src={itemLogo} alt="product" />
     </a>
@@ -31,7 +31,7 @@ export default function Produto(){
         </div>
         <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-gray-900 dark:text-white">R$ 599,90</span>
-            <a href="/" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comprar</a>
+            <a href="/" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comprar</a>
         </div>
     </div>
 </div>
