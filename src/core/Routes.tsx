@@ -5,7 +5,7 @@ import Admin from "./modules/admin/Admin";
 
 export const router = createBrowserRouter([
     {
-        path: '/home',
+        path: '/',
         element: <Home />,
         index: true
     },

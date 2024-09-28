@@ -17,7 +17,8 @@ export default function Login() {
   }
 
   return (
-    <main className="w-screen h-screen flex bg-gradient-to-r from-indigo-900 to-indigo-600">
+    <main className="w-screen h-screen flex">
+      <aside className="w-0 lg:w-3/5 h-screen bg-gradient-to-r from-indigo-900 to-indigo-600" />
         {
             menu ? <Logging setMenu={switchMenu} /> : <Register setMenu={switchMenu} />
         }

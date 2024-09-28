@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 
 export default function Logging({setMenu}: Props){
@@ -29,7 +30,8 @@ export default function Logging({setMenu}: Props){
       }
 
     return (
-            <section className="p-6 w-1/3 bg-zinc-800 m-auto rounded-lg">
+            <section className="p-6 w-full lg:w-2/5 h-screen bg-zinc-800 m-auto flex items-center flex-wrap">
+            <div className="w-full">
             <div className="flex flex-shrink-0 items-center">
               <img
                 className="h-24 w-auto block mx-auto"
@@ -84,7 +86,7 @@ export default function Logging({setMenu}: Props){
     
               <button
                 className="bg-indigo-700 py-3 px-5 rounded w-full font-bold
-              hover:bg-indigo-900 text-white"
+              hover:bg-indigo-900 text-white mb-3"
                 type="submit"
               >
                 Login
@@ -92,7 +94,16 @@ export default function Logging({setMenu}: Props){
             {error}
             </form>
             <p onClick={setMenu}
-            className="text-gray-300 hover:text-gray-100 cursor-pointer text-center pt-4 font-bold">Cadastrar</p>
+            className="bg-indigo-100 py-3 px-5 rounded w-full f text-indigo-700 cursor-pointer text-center pt-4 font-bold">Cadastrar</p>
+            <p className="text-gray-300 hover:text-gray-100 cursor-pointer text-center pt-4 font-bold">ou</p>
+            <button
+                className="bg-indigo-700 py-3 px-5 rounded w-full font-bold
+              hover:bg-indigo-900 text-white mt-3"
+                type="submit"
+              >
+                Entrar com o Google
+              </button>
+            </div>
           </section>
     )
 }
