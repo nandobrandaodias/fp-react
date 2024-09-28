@@ -1,0 +1,13 @@
+.panelOptions{
+    cursor: pointer;
+    color: white;
+    width: 48%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+}
+
+
+.panelOptions p{
+    font-size: 1.5rem;
+}
