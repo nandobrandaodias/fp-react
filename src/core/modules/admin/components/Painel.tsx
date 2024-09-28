@@ -7,8 +7,8 @@ export default function Painel({setArea}: Props){
 
     let optH: any = options.map((opt)=>{
         return (
-        <div onClick={(e=>setArea(opt.opt))}className="panelOptions bg-slate-900 rounded-lg h-48 hover:bg-slate-700">
-            <p>{opt.name}</p>
+        <div key={opt.opt} onClick={(e=>setArea(opt.opt))}className="panelOptions bg-slate-900 rounded-lg h-48 hover:bg-slate-700">
+            <p >{opt.name}</p>
         </div>)
         })
 

@@ -39,8 +39,8 @@ export default function Admin(){
     return (
         <main className="w-screen h-screen flex bg-gradient-to-r from-indigo-900 to-indigo-600">
             <Sidebar setArea={setArea}/>
-            <div className="w-full h-screen bg-white ml-0 py-8 lg:ml-64">
-                <section className="lg:w-11/12 mx-auto h-full bg-zinc-400 rounded-xl overflow-y-auto">
+            <div className="w-full h-screen bg-white ml-0 lg:ml-64">
+                <section className="w-full mx-auto h-full bg-zinc-100 overflow-y-auto p-2">
                     {
                         renderArea()
                     }

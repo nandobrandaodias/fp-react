@@ -2,8 +2,11 @@ export default function Produtos(){
     return(
         <div className="p-6">
             <h1 className="text-3xl text-slate-900 pb-1 font-semibold border-b-2 border-b-slate-900">Lista de Produtos</h1>
-            <div className="relative overflow-x-auto mt-5">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          
+          <div className="relative overflow-x-auto">
+            <button type="button" className="float-right text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 my-3 dark:bg-blue-600 dark:hover:bg-blue-700">+ Novo Produto</button>
+
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
