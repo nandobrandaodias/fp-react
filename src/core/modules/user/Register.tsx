@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Register({setMenu}: Props){
-    const navigate = useNavigate();
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState();
 
     function registering(){
@@ -12,7 +12,8 @@ export default function Register({setMenu}: Props){
     }
 
     return (
-        <section className="p-6 w-1/3 bg-zinc-800 m-auto rounded-lg">
+        <section className="p-6 w-full lg:w-2/5 h-screen bg-zinc-800 m-auto flex items-center flex-wrap">
+        <div className="w-full">
         <div className="flex flex-shrink-0 items-center">
           <img
             className="h-24 w-auto block mx-auto"
@@ -30,15 +31,15 @@ export default function Register({setMenu}: Props){
             </label>
             <div className="mt-1">
               <input
-                type="email"
+                type="name"
                 required
-                name="email"
-                id="email"
+                name="name"
+                id="name"
                 placeholder="Digite seu Nome..."
                 className="bg-zinc-950 border-2 border-indigo-800 rounded text-white
                 focus:border-indigo-800 focus:outline-none px-3 py-2 w-full"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
           </div>
@@ -97,14 +98,14 @@ export default function Register({setMenu}: Props){
             <div className="mt-1">
               <input
                 type="password"
-                name="password"
-                id="password"
+                name="confirmPassword"
+                id="confirmPassword"
                 required
                 placeholder="Confirme sua senha..."
                 className="bg-zinc-950 border-2 border-indigo-800 rounded text-white
                 focus:border-indigo-800 focus:outline-none px-3 py-2 w-full"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
           </div>
@@ -120,6 +121,7 @@ export default function Register({setMenu}: Props){
         {error}
         <p onClick={setMenu}
         className="text-gray-300 hover:text-gray-100 cursor-pointer text-center pt-4 font-bold">Já possuo conta</p>
+        </div>
       </section>
     )
 }
