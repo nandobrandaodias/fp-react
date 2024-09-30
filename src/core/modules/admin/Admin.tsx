@@ -19,7 +19,6 @@ export default function Admin(){
       })
 
       function renderArea(){
-        console.log(area)
         switch(area){
             case 1: 
                 return <Painel setArea={setArea}/>

@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/core/utils/*"]
     },
     "target": "es5",
     "lib": [

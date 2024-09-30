@@ -1,5 +1,5 @@
-import Paginator from "./components/Paginator";
-import Produto from "./components/Produto";
+import Paginator from "./fragments/Paginator";
+import Produto from "./fragments/Produto";
 
 export default function Produtos(){
     return(
