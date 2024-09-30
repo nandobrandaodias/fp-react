@@ -9,7 +9,7 @@ export default function Login() {
   let navRef = useRef(navigate)
 
   useEffect(()=>{
-    if(localStorage.getItem("token")) navRef.current('/home')
+    if(localStorage.getItem("token")) navRef.current('/')
   })
 
   function switchMenu(){

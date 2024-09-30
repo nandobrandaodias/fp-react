@@ -32,11 +32,13 @@ export default function Logging({setMenu}: Props){
             <section className="p-6 w-full lg:w-2/5 h-screen bg-zinc-800 m-auto flex items-center flex-wrap">
             <div className="w-full">
             <div className="flex flex-shrink-0 items-center">
+              <a href="/">
               <img
                 className="h-24 w-auto block mx-auto"
                 src='https://www.researchgate.net/profile/Valeria-Ghisloti-Iared/publication/361670738/figure/fig1/AS:1173066331766785@1656692216313/Figura-3-Quadrado-Preto-Sobre-Fundo-Branco-Kazimir-Malevich.jpg'
                 alt="Your Company"
-              />
+                />
+                </a>
             </div>
             <form onSubmit={login}>
               <div className="col-span-full my-4">

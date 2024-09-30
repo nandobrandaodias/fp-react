@@ -15,7 +15,7 @@ export default function Admin(){
         let token: any = localStorage.getItem("token")
         let user
         token ? user = JSON.parse(token) : user = null;
-        if(!user || user?.role !== "Admin") navRef.current("/home");
+        if(!user || user?.role !== "Admin") navRef.current("/");
       })
 
       function renderArea(){

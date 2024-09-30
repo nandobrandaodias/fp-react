@@ -4,7 +4,7 @@ export default function Sidebar({ setArea }: Props) {
   const navigate = useNavigate();
   function logout() {
     localStorage.removeItem("token");
-    navigate("/home");
+    navigate("/");
   }
   return (
     <>
