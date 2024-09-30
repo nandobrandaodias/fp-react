@@ -1,4 +1,4 @@
-import Categoria from "./components/Categoria";
+import Categoria from "./fragments/Categoria";
 
 export default function Categorias(){
     return(
