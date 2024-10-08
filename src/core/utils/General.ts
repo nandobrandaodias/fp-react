@@ -10,3 +10,9 @@ export function getBase64Image(img: any) {
 
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
+
+
+export function logout() {
+    if(localStorage.getItem("token"))localStorage.removeItem("token");
+    window.location.href = '/login'
+  }

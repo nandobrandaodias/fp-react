@@ -1,15 +1,15 @@
-import Categorias from "./Categorias";
+import { Outlet } from "react-router";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import Produtos from "./Produtos";
 
 export default function Home(){
+    const user = localStorage.getItem("token") || ""
     return (
         <>
-            <Navbar />
-            <section className="w-full bg-zinc-500 h-80"></section>
-            <Categorias />
-            <Produtos />
+            <Navbar user={user}/>
+            <section className="w-full">
+            <Outlet />
+            </section>
             <Footer />
         </>
     )

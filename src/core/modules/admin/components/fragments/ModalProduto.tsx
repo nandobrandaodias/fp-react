@@ -1,4 +1,4 @@
-import { Button, FileInput, Label, Modal, TextInput } from "flowbite-react";
+import { Button, Label, Modal, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 
 export default function ModalProduto({
@@ -9,8 +9,7 @@ export default function ModalProduto({
 }: Props) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<number>();
   const [slug, setSlug] = useState("");
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function ModalProduto({
     let novoProduto;
 
     if (produtos.length) {
-      let higherID = Math.max(...produtos.map((x: any) => x.id));
+      const higherID = Math.max(...produtos.map((x: any) => x.id));
       novoProduto = {
         id: product?.id ?? higherID + 1,
         name: name,
@@ -51,7 +50,7 @@ export default function ModalProduto({
     }
 
     if (product) {
-      let pIndex = produtos.findIndex((x) => x.id === product.id);
+      const pIndex = produtos.findIndex((x) => x.id === product.id);
       produtos[pIndex] = novoProduto;
       localStorage.setItem("products", JSON.stringify(produtos));
     }
@@ -67,60 +66,62 @@ export default function ModalProduto({
           {product ? "Edição de Produto" : "Cadastro de Produto"}
         </Modal.Header>
         <Modal.Body>
-            <div>
-              <div className="mb-2 block">
-                <Label htmlFor="name" value="Nome do Produto" />
-              </div>
-              <TextInput
-                id="name"
-                type="text"
-                placeholder="Nome do Produto..."
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                shadow
-              />
+          <div className="w-full mb-2">
+            <div className="mb-1 block">
+              <Label htmlFor="name" value="Nome do Produto" />
             </div>
+            <TextInput
+              id="name"
+              type="text"
+              placeholder="Nome do Produto..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              shadow
+            />
+          </div>
 
-            <div className="w-full   ">
-              <div className="mb-2 block">
-                <Label htmlFor="comment" value="Categoria do Produto" />
-              </div>
-              <TextInput
-                id="comment"
-                placeholder="Categoria..."
-                required
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
+          <div className="w-full mb-2">
+            <div className="mb-1 block">
+              <Label htmlFor="categoria" value="Categoria" />
             </div>
+            <Select id="categoria" required
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}>
+              <option>Smartphone</option>
+              <option>Computador</option>
+              <option>Acessórios</option>
+              <option>Dispositivo Eletrônico</option>
+              <option>Outros</option>
+            </Select>
+          </div>
 
-            <div className="w-full">
-              <div className="mb-2 block">
-                <Label htmlFor="comment" value="Valor do Produto" />
-              </div>
-              <TextInput
-                id="comment"
-                placeholder="Valor..."
-                required
-                type="number"
-                value={value}
-                onChange={(e) => setValue(Number(e.target.value))}
-              />
+          <div className="w-full mb-2">
+            <div className="mb-1 block">
+              <Label htmlFor="comment" value="Valor do Produto" />
             </div>
+            <TextInput
+              id="comment"
+              placeholder="Valor..."
+              required
+              type="number"
+              value={value}
+              onChange={(e) => setValue(Number(e.target.value))}
+            />
+          </div>
 
-            <div className="w-full">
-              <div className="mb-2 block">
-                <Label htmlFor="comment" value="Código do Produto" />
-              </div>
-              <TextInput
-                id="comment"
-                placeholder="Código do Produto..."
-                required
-                value={slug}
-                onChange={(e) => setSlug(e.target.value)}
-              />
+          <div className="w-full mb-2">
+            <div className="mb-1 block">
+              <Label htmlFor="comment" value="Código do Produto" />
             </div>
+            <TextInput
+              id="comment"
+              placeholder="Código do Produto..."
+              required
+              value={slug}
+              onChange={(e) => setSlug(e.target.value)}
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => saveProduct()}>Salvar</Button>
